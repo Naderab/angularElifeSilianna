@@ -3,5 +3,5 @@ export class Product {
     title!: string;
     quantity!: number;
     price!: number;
-    like!: number
+    like!: number;
 }

@@ -1,0 +1,38 @@
+<form name="form" #form="ngForm">
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Title :</label>
+        <input type="text" class="form-control" name="title" [(ngModel)]="product.title" #title="ngModel" required minlength="3">
+        <div *ngIf="title.touched && title.invalid">
+        <div *ngIf="title.errors!['required']">Title is required</div>
+        <div *ngIf="title.errors!['minlength']">Min length 3</div>
+        </div>
+    </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Quantity :</label>
+        <input type="number" class="form-control" name="quantity" [(ngModel)]="product.quantity">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Price :</label>
+        <input type="number" class="form-control" name="price" [(ngModel)]="product.price">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">telephone :</label>
+        <input type="text" class="form-control" name="tele" [(ngModel)]="telephonee" #tele="ngModel"
+         minlength="8" maxlength="8" pattern="[0-9]+">
+         <div *ngIf="tele.touched && tele.invalid">
+            <div *ngIf="tele.errors!['maxlength']">Max length 8</div>
+            <div *ngIf="tele.errors!['minlength']">Min length 8</div>
+            <div *ngIf="tele.errors!['pattern']">numeroooo</div>
+
+            </div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Email :</label>
+        <input type="email" class="form-control" name="e" [(ngModel)]="email" #e="ngModel"
+          pattern="[A-Za-z0-9._-]+.@esprit.tn$ || [A-Za-z0-9._-]+.@gmail.com$">
+         <div *ngIf="e.touched && e.invalid">
+            <div *ngIf="e.errors!['pattern']">numeroooo</div>
+            </div>
+      </div>
+      <button type="submit" class="btn btn-primary" (click)="ajout()" [disabled]="form.invalid">ADD</button>
+</form>
