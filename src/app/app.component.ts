@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-
+//meta data pur les component
+//decorateur
+//annotation
 @Component({
-  selector: 'app-root',
+  selector: 'app-root', //idenfiant
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })

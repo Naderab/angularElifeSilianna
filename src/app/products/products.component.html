@@ -1,0 +1,45 @@
+<app-product></app-product>
+{{title}}
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>quantity</th>
+            <th>price</th>
+            <th>like</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p  of listProducts">
+            <td>{{p.id}}</td>
+            <td>{{p.title}}</td>
+            <td>{{p.quantity}}</td>
+            <td>{{p.price}}</td>
+            <td>{{p.like}}</td>
+            <td><button *ngIf="p.quantity !== 0" [disabled]="p.quantity == 0" (click)="buy(p.id)">Buy</button></td>
+            <td><button (click)="like(p.id)">like</button></td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="container">
+    <div class="row">
+        <div class="col" *ngFor="let p of listProducts">
+            <div class="card" style="width: 35rem">
+                <img src="../../assets/images/img.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{p.title}}</h5>
+                    <p class="card-text"><strong>Price : </strong>{{p.price}}</p>
+                    <p class="card-text"><strong>Quantity : </strong>{{p.quantity}}</p>
+                    <p class="card-text"><strong>Like : </strong>{{p.like}}</p>
+
+                    <button [disabled]="p.quantity == 0" (click)="buy(p.id)">Buy</button>
+                    <button (click)="like(p.id)">Like</button>
+
+                </div>
+
+            </div>
+
+        </div>
+      
