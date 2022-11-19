@@ -22,15 +22,22 @@ export class ProductsComponent implements OnInit {
       (error)=>console.log(error)
     );
   }
-  buy(id: string) {
+  buy(id: number) {
     this.listProducts.map((p) => {
       return p.id === id && p.quantity--;
     })
   }
 
-  like(id: string) {
-    this.listProducts.map((p) => {
-      return p.id === id && p.like++;
+  like(p: any) {
+    p.like++;
+    this.p.update(p.id,p).subscribe((product)=>{
+      // this.listProducts.map((p1) => {
+      //   return p1.id === product.id && p1.like++;
+      // })
     })
+    
+  }
+  delete(id:number){
+    this.p.remove(id).subscribe(()=>this.listProducts=this.listProducts.filter((p)=>p.id != id))
   }
 }

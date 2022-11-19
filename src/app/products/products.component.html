@@ -35,11 +35,12 @@
                     <p class="card-text"><strong>Like : </strong>{{p.like}}</p>
 
                     <button [disabled]="p.quantity == 0" (click)="buy(p.id)">Buy</button>
-                    <button (click)="like(p.id)">Like</button>
-
+                    <button (click)="like(p)">Like</button>
+                    <button (click)="delete(p.id)">Delete</button>
                 </div>
 
             </div>
+
 
         </div>
       

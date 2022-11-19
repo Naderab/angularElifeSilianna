@@ -1,3 +1,18 @@
 {
-  "products":[]
+  "products": [
+    {
+      "title": "T-shirt 1",
+      "quantity": 120,
+      "price": 100,
+      "like": 46,
+      "id": 1
+    },
+    {
+      "title": "T-shirt 2",
+      "quantity": 0,
+      "price": 100,
+      "like": 0,
+      "id": 2
+    }
+  ]
 }
